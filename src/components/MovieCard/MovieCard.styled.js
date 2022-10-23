@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 16px;
+export const Container = styled.section`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 8px;
+   border-bottom: 1px solid black;
 `;
 
 export const CardWrapper = styled.div`
@@ -13,11 +15,4 @@ export const CardWrapper = styled.div`
   > a {
     text-decoration: none;
   }
-`;
-
-export const ProductName = styled.h3`
-  padding: 4px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  color: black;
 `;

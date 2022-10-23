@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { getMovieById } from "MovieApi";
+import { Container } from "./MovieCard.styled";
 
 export const MovieCard = ({id}) => {
   const [movie, setMovie] = useState(null);
@@ -12,7 +12,7 @@ export const MovieCard = ({id}) => {
     }, [id]);
  
   return (
-    (movie &&  <section>
+    (movie &&  <Container >
       <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" height='350'/>
       <div>
         <h2>
@@ -22,9 +22,9 @@ export const MovieCard = ({id}) => {
         <h3>Overview</h3>
         <p>{movie.overview}</p>
         <h3>Genres</h3>
-        <p>{movie.genres.map(genre => genre.name)}</p>
+        <p>{movie.genres.map(genre => (<span key={genre.id}>{genre.name} </span>) )}</p>
       </div>
-    </section>)
+    </Container>)
    
   );
 };

@@ -1,43 +1,42 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Searchbar } from "./Searchbar";
 import { MovieList } from 'components/MovieList/MovieList';
+import { Container } from 'pages/pages.styled';
 import { getSearchMovies } from 'MovieApi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Movies = () => {
-   const [searchMovie, setSearchMovie] = useState('');
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query") ?? "";
 
     useEffect(() => {
-    if (searchMovie === '') {
+      if (query === '') {
+         setMovies([]);
       return;
     }
  
-      getSearchMovies(searchMovie, 1)
+      getSearchMovies(query, 1)
         .then(movies => {
           setMovies([...movies])
         }).catch(error => setError(error.message));
-  }, [searchMovie]);
+  }, [query]);
 
-  const handleFormSubmit = searchImage => {
-    if (searchMovie === searchImage) {
-      return;
-    } else {
-      setSearchMovie(searchImage);
-      setMovies([]);
-    }
+  const handleFormSubmit = queryMovie => {
+  setSearchParams(queryMovie.trim() !== "" ? { query: queryMovie } : {} );
   };
 
+ const visibleMovies = movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
 
  return (
     <main>
      <Searchbar onSubmit={handleFormSubmit} />
       {error && toast.error(error)}
-     {movies.length > 0 ? (
-       <section><MovieList movies={movies}></MovieList></section>
-          
+     {visibleMovies.length > 0 ? (
+       <Container><MovieList movies={visibleMovies}></MovieList></Container>    
       ) : (
             <p>
               Please, enter query movie.

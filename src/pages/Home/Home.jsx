@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { getPopularMovies } from 'MovieApi';
 import { MovieList } from 'components/MovieList/MovieList';
-import { HomeTitle } from './Home.styled';
+import { HomeTitle } from 'pages/pages.styled';
 export const Home = () => {
   const [movies, setMovies] = useState([]);
 

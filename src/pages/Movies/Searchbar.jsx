@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { HiSearch } from 'react-icons/hi';
 import {
@@ -9,24 +9,25 @@ import {
 } from './Searchbar.styled';
 import { toast } from 'react-toastify'; 
 
-export const Searchbar = ({ onSubmit }) => {
+export const Searchbar = ({onSubmit }) => {
   const [searchMovie, setSearchMovie] = useState('');
 
  const handleSearchNameChange = event => {
-    setSearchMovie(event.currentTarget.value.toLowerCase());
+   setSearchMovie(event.currentTarget.value.toLowerCase());
   };
 
  const handleSubmit = e => {
-    e.preventDefault();
-    if (searchMovie.trim() === '') {
-      return toast('Please, enter query.');
-    }
+   e.preventDefault();
+   if (searchMovie.trim() === '') {
+     onSubmit(searchMovie);
+    return toast('Please, enter query.');
+   }
     onSubmit(searchMovie);
   }
 
     return (
       <HeaderSearch>
-        <FormSearch onSubmit={handleSubmit}>
+        <FormSearch onSubmit={handleSubmit} >
           <FormSearchBtn type="submit">
          <HiSearch/>
           </FormSearchBtn>

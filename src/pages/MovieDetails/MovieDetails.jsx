@@ -1,24 +1,27 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet,useParams, useLocation  } from "react-router-dom";
+import { HiChevronLeft } from 'react-icons/hi';
 import { MovieCard } from "components/MovieCard/MovieCard";
-import { useParams } from "react-router-dom";
-
+import { Container, AddTitle, AddList, Link } from "pages/pages.styled";
 export const MovieDetails = () => {
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? "/";
+  console.log('loc st', location)
   return (
     <main>
+      <Link to={backLinkHref}><HiChevronLeft/>Go back</Link>
       <MovieCard id={movieId} />
-      <section>
-        <p>Additional information</p>
-      <ul>
+      <Container>
+        <AddTitle>Additional information</AddTitle>
+      <AddList>
         <li>
-          <Link to="cast">cast</Link>
+          <Link to="cast" state={{from:location.state.from}}>Cast</Link>
         </li>
         <li>
-          <Link to="reviews"> reviews</Link>
+          <Link to= "reviews" state={{from:location.state.from}}>Reviews</Link>
         </li>
-        </ul>
-      </section>
-        
+        </AddList>
+      </Container>
       <Outlet />
     </main>
   );

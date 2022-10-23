@@ -7,20 +7,24 @@ export const MoviesList = styled.ul`
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 8px 0;
+  padding-bottom: 8px;
   border-bottom: 1px solid black;
 `;
+
 export const MovieItem = styled.li`
+display: flex;
+  flex-direction: column;
+  justify-content: center;
 padding: 8px;
+height: 60px;
 width: 46%;
-border: 1px solid blue;
+border: 1px solid orangered;
   &:hover h2 {
     color:orangered;
   }
 `;
 
-export const LinkS = styled(NavLink)`
-  padding: 8px 8px;
+export const Link = styled(NavLink)`
   border-radius: 4px;
   text-decoration: none;
   color: black;
