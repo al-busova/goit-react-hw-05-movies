@@ -3,7 +3,7 @@ import { HiChevronLeft } from 'react-icons/hi';
 import { MovieCard } from "components/MovieCard/MovieCard";
 import { Container, AddTitle, AddList, Link } from "pages/pages.styled";
 
-export const MovieDetails = () => {
+ const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/";
@@ -26,3 +26,5 @@ export const MovieDetails = () => {
     </main>
   );
 };
+
+export default MovieDetails;

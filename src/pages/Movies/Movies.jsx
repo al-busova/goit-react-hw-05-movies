@@ -7,7 +7,7 @@ import { getSearchMovies } from 'MovieApi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const Movies = () => {
+ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -47,15 +47,4 @@ export const Movies = () => {
   );
 };
 
-
-
-
-
-export const App = () => {
- 
-
-
-
-
- 
-};
+export default Movies;
