@@ -15,10 +15,10 @@ import { Container, AddTitle, AddList, Link } from "pages/pages.styled";
         <AddTitle>Additional information</AddTitle>
       <AddList>
         <li>
-          <Link to="cast" state={{from:location.state.from}}>Cast</Link>
+          <Link to="cast" state={{from:backLinkHref}}>Cast</Link>
         </li>
         <li>
-          <Link to= "reviews" state={{from:location.state.from}}>Reviews</Link>
+          <Link to= "reviews" state={{from:backLinkHref}}>Reviews</Link>
         </li>
         </AddList>
       </Container>
