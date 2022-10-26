@@ -1,36 +1,36 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const MoviesList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid black;
+  gap: ${props => props.theme.space[4]}px;
+  padding-bottom: ${props => props.theme.space[3]}px;
+  border-bottom: ${props => props.theme.space[2]}px solid black;
 `;
 
 export const MovieItem = styled.li`
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-padding: 8px;
-height: 60px;
-width: 46%;
-border: 1px solid orangered;
+  padding: ${props => props.theme.space[3]}px;
+  height: 60px;
+  width: 46%;
+  border: ${props => props.theme.space[1]}px solid orangered;
   &:hover h2 {
-    color:orangered;
+    color: ${props => props.theme.colors.accent};
   }
 `;
 
 export const Link = styled(NavLink)`
-  border-radius: 4px;
+  border-radius: ${props => props.theme.space[2]}px;
   text-decoration: none;
-  color: black;
+  color: ${props => props.theme.colors.main};
   font-weight: 500;
 `;
 export const MovieTitle = styled.h2`
-margin: 0;
-font-size: ${props => props.theme.fontSizes.m}px;
+  margin: 0;
+  font-size: ${props => props.theme.fontSizes.m}px;
 `;

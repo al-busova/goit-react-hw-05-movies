@@ -19,7 +19,7 @@ export const Movies = () => {
       return;
     }
  
-      getSearchMovies(query, 1)
+      getSearchMovies(query, 1).then(data => data.results)
         .then(movies => {
           setMovies([...movies])
         }).catch(error => setError(error.message));

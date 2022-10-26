@@ -3,7 +3,7 @@ export const theme = {
     main: '#000',
     accent: 'orangered',
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 128],
+  space: [0, 1, 4, 8, 16, 32, 64, 128],
   fontSizes: {
     xs: 12,
     s: 16,

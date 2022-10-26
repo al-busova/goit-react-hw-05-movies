@@ -1,7 +1,8 @@
 import { getMovieReviews } from "MovieApi";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { AuthorReview} from "./Reviews.styled";
+import { AuthorReview } from "./Reviews.styled";
+
 export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);

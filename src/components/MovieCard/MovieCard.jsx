@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getMovieById } from "MovieApi";
 import { Container } from "./MovieCard.styled";
+import PropTypes from 'prop-types';
 
 export const MovieCard = ({id}) => {
   const [movie, setMovie] = useState(null);
@@ -27,4 +28,8 @@ export const MovieCard = ({id}) => {
     </Container>)
    
   );
+};
+
+MovieCard.propTypes = {
+      id: PropTypes.string.isRequired,
 };

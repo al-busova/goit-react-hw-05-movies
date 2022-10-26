@@ -9,6 +9,7 @@ import {
   CastImg,
   CastNoImag,
 } from './Cast.styled';
+
 export const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState(null);

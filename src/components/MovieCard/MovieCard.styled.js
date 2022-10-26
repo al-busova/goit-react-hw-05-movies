@@ -1,16 +1,16 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Container = styled.section`
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding-bottom: 8px;
-   border-bottom: 1px solid black;
+  gap: ${props => props.theme.space[4]}px;
+  padding-bottom: ${props => props.theme.space[3]}px;
+  border-bottom: ${props => props.theme.space[1]}px solid black;
 `;
 
 export const CardWrapper = styled.div`
-  border: 1px solid black;
-  border-radius: 4px;
+  border: ${props => props.theme.space[1]}px solid black;
+  border-radius: ${props => props.theme.space[2]}px;
 
   > a {
     text-decoration: none;

@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react';
 import { getPopularMovies } from 'MovieApi';
 import { MovieList } from 'components/MovieList/MovieList';
 import { HomeTitle } from 'pages/pages.styled';
+
 export const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getPopularMovies(1).then(movies => {
+    getPopularMovies(1).then(data => data.results).then(movies => {
         setMovies(movies);
       });
     }, []);

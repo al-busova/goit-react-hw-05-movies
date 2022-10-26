@@ -9,12 +9,12 @@ export const HeaderSearch = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-right: ${props => props.theme.space[4]};
+  padding-left: ${props => props.theme.space[4]};
+  padding-top: ${props => props.theme.space[3]};
+  padding-bottom: ${props => props.theme.space[3]};
   color: #fff;
-  background-color: orangered;
+  background-color: ${props => props.theme.colors.accent};
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
