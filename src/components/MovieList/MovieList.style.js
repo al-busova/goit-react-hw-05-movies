@@ -8,7 +8,7 @@ export const MoviesList = styled.ul`
   flex-wrap: wrap;
   gap: ${props => props.theme.space[4]}px;
   padding-bottom: ${props => props.theme.space[3]}px;
-  border-bottom: ${props => props.theme.space[2]}px solid black;
+  border-bottom: ${props => props.theme.space[1]}px solid black;
 `;
 
 export const MovieItem = styled.li`

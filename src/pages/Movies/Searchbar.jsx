@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HiSearch } from 'react-icons/hi';
 import {
@@ -9,8 +9,14 @@ import {
 } from './Searchbar.styled';
 import { toast } from 'react-toastify'; 
 
-export const Searchbar = ({onSubmit }) => {
+export const Searchbar = ({onSubmit, query }) => {
   const [searchMovie, setSearchMovie] = useState('');
+
+  useEffect(() => {
+      if (query !== '') {
+        setSearchMovie(query);
+    }
+  }, [query]);
 
  const handleSearchNameChange = event => {
    setSearchMovie(event.currentTarget.value.toLowerCase());
@@ -45,4 +51,5 @@ export const Searchbar = ({onSubmit }) => {
 
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired,
 };

@@ -8,8 +8,6 @@ export const HomeTitle = styled.h1`
 
 export const Container = styled.section`
   padding: ${props => props.theme.space[3]}px 0;
-  border-bottom: ${props => props.theme.space[1]}px solid
-    ${props => props.theme.colors.main};
 `;
 export const AddTitle = styled.h3`
   margin-left: ${props => props.theme.space[4]}px;

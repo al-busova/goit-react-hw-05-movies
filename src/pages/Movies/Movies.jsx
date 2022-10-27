@@ -29,14 +29,12 @@ import 'react-toastify/dist/ReactToastify.css';
   setSearchParams(queryMovie.trim() !== "" ? { query: queryMovie } : {} );
   };
 
- const visibleMovies = movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
-
  return (
     <main>
-     <Searchbar onSubmit={handleFormSubmit} />
+     <Searchbar onSubmit={handleFormSubmit} query= {query} />
       {error && toast.error(error)}
-     {visibleMovies.length > 0 ? (
-       <Container><MovieList movies={visibleMovies}></MovieList></Container>    
+     {movies.length > 0 ? (
+       <Container><MovieList movies={movies}></MovieList></Container>    
       ) : (
             <p>
               Please, enter query movie.
